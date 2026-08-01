@@ -26,7 +26,7 @@ Getting Started
 Clone the repository:
 
 git clone git@github.com:Hichtoor/django-portfolio.git
-cd django-blog
+cd django-portfolio
 
 Create a virtual environment:
 
