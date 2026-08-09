@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load blog_tags %}
 
 {% block content %}
 
@@ -120,7 +120,7 @@
 							
 						</a>
 						<p class="excert">
-							{{post.content}}
+							{{post.content|snippet}}
 						</p>
 						<a href="{% url 'blog:single' pid=post.id %}" class="primary-btn">View More</a>
 					</div>
