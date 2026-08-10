@@ -14,7 +14,7 @@
                 <a href="{% url 'blog:single' pid=post.id %}">
                     <h6>{{post.title}}</h6>
                 </a>
-                <p>{{post.published_at}}</p>
+                <p>{{post.published_at|date:"d M Y"}}</p>
             </div>
 
         </div>
