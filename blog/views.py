@@ -5,12 +5,15 @@ from blog.models import Post
 
 # Create your views here.
 
-def home(request):
+def home(request, cat_name=None):
     posts = Post.objects.filter(status=1)
+    if cat_name:
+        posts = posts.filter(category__name=cat_name)
     context = {'posts': posts}
     return render(request, 'blog/home.html', context)
 
-def single(request, pid):
+def single(request, pid=None, category=None):
     post = get_object_or_404(Post, pk=pid, status=1)
     context = {'post': post}
     return render(request, 'blog/single.html', context)
+
