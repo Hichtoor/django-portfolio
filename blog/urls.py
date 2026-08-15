@@ -9,6 +9,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('<int:pid>', single, name='single'),
     path('category/<str:cat_name>', home, name='category'),
+    path('author/<str:author_name>', home, name='author'),
 
 
 

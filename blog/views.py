@@ -5,10 +5,12 @@ from blog.models import Post
 
 # Create your views here.
 
-def home(request, cat_name=None):
+def home(request, cat_name=None, author_name=None):
     posts = Post.objects.filter(status=1)
     if cat_name:
         posts = posts.filter(category__name=cat_name)
+    if author_name:
+        posts = posts.filter(author__username=author_name)
     context = {'posts': posts}
     return render(request, 'blog/home.html', context)
 
