@@ -19,3 +19,11 @@ def single(request, pid=None, category=None):
     context = {'post': post}
     return render(request, 'blog/single.html', context)
 
+
+def search(request):
+    posts = Post.objects.filter(status=1)
+
+    if request.method == "GET":
+        posts = posts.filter(content__contains=request.GET.get('s'))
+        context = {'posts': posts}
+    return render(request, 'blog/home.html', context)
