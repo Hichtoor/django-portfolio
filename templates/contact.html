@@ -13,7 +13,8 @@
 					Contact Us
 				</h1>
 				<p class="text-white link-nav"><a href="index.html">Home </a> <span class="lnr lnr-arrow-right"></span>
-					<a href="contact.html"> Contact Us</a></p>
+					<a href="contact.html"> Contact Us</a>
+				</p>
 			</div>
 		</div>
 	</div>
@@ -57,8 +58,9 @@
 				</div>
 			</div>
 			<div class="col-lg-8">
-				<form class="form-area contact-form text-right" id="myForm" action="mail.php" method="post">
+				<form class="form-area contact-form text-right" action="{% url 'core:contact' %}" method="post">
 					<div class="row">
+						{% csrf_token %}
 						<div class="col-lg-6 form-group">
 							<input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''"
 								onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control"
